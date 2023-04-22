@@ -18,8 +18,8 @@ def package_find(file_path)->List[str]:
 
 
 setup(
-    name="mlproject",
-    version="0.0.1",
-    author="Ayush Mehra",
-    packages=package_find("requirements.text")
+    name = "mlproject",
+    version = "0.0.1",
+    author = "Ayush Mehra",
+    packages = package_find("requirements.text")
 )
