@@ -21,5 +21,5 @@ setup(
     name = "mlproject",
     version = "0.0.1",
     author = "Ayush Mehra",
-    packages = package_find("requirements.text")
+    packages = package_find("requirements.txt")
 )
