@@ -6,6 +6,12 @@ from src.logger import logging
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+
+
 @dataclass # we can dirctly define our class variabel with dataclass without using __init__
 class DataInegstionConfig:
 
@@ -42,5 +48,9 @@ class DataIngestion:
 
 if __name__=="__main__":
     obj = DataIngestion()
-    obj.initate_data_ingestion()
-    
+    train_data, test_data = obj.initate_data_ingestion()
+    data_transformation = DataTransformation()
+    train_array,test_array, preprocessor_path = data_transformation.initiate_data_transformation(train_data,test_data)
+    modeltrainer = ModelTrainer()
+    print(modeltrainer.initate_model_trainer(train_array=train_array,test_array=test_array,preprocessor_path=preprocessor_path))
+
